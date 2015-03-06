@@ -1,0 +1,19 @@
+Testing GUI - X11 window system
+A)Xnee has four modes: record, replay, retype, and distribute
+Xnee can record keyboard presses, mouse motion, mouse clicks, and the entire X11 protocol. 
+
+Here are ten commands that can be run in xnee:
+cnee --record --mouse --out-file <filename>
+cnee --record --keyboard --out-file <filename>
+cnee --record --keyboard --mouse --out-file <filename>
+cnee --replay --file <filename>
+cnee --replay --file <filename> --speed-percent 50
+cnee --replay --file <filename> --speed-percent 200
+cnee --time 10 --type-help
+cnee --time 10 --retype-file testfile.txt
+cnee --record --mouse --events-to-record -1 --stop-key h
+cnee --record --mouse --events-to-record -1 --pause-key p --resume-key r
+
+C) cnee --record --events-to-record 100 --mouse --keyboard -o xnee.xns -e xnee.log -v &
+
+D) cnee --replay -f xnee.xns

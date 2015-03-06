@@ -1,0 +1,12 @@
+Dummy Object
+A dummy object is required to execute the test, but not really needed for anything useful.
+
+Stub
+A stub takes care of the indirect inputs of a class by providing some values to the SUT.
+A stub needs to be instructed about what values to return when its methods are invoked.
+
+Spy
+Test spies take care of indirect outputs and verifies the actions of the SUT.
+
+Mock
+Mocks are very similar to test spies but differ in syntax and flow of the code within test the methods.
