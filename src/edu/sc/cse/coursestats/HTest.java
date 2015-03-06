@@ -165,6 +165,8 @@ public class HTest {
 	public void scheduleDBtestPassHC(){
 		Course c1 = new Course("CSCE 330");
 		
+		//System.out.println(c1.toString());
+		
 		assertThat(c1.getInstructor().trim(), equalTo("Marco Valtorta (P)"));
 		
 	}

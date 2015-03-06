@@ -43,7 +43,7 @@ public class Course {
 	 
 	 public Course scheduleDB(String s)
 	 {
-	   	  Course c1 = new Course("",0,"","","");
+	   	  Course tempC = new Course("",0,"","","");
 
 			String filename = "data/sched.csv";
 			File infile = null;
@@ -78,25 +78,23 @@ public class Course {
 						days = field[9];
 						timeOfDay = field[10];
 						instructor= field[14];
-						//15 = dates
 						room= field[16];
-						//enrolled=field[12];
+
 						
 						String temp = dept + num;
+						temp = temp.trim();
 	   					int tempNum = Integer.parseInt(num.trim());
 
-	   					 
-	   					//System.out.println(temp + " " + temp2);
-	   					if (temp.indexOf(s) >= 0 )
+	   					if (temp.equals(s))
 	   					{
-	   					 c1.setInstructor(instructor);
-	   					 c1.setStart(timeOfDay.substring(0, timeOfDay.indexOf('-')));
-	   					 c1.setFinish(timeOfDay.substring(timeOfDay.indexOf('-')+1));
-	   					 c1.setDept(dept);
-	   					 c1.setNumber(tempNum);
+		   				 tempC.setDept(dept);
+		   				 tempC.setNumber(tempNum);
+	   					 tempC.setInstructor(instructor);
+	   					 tempC.setStart(timeOfDay.substring(0, timeOfDay.indexOf('-')));
+	   					 tempC.setFinish(timeOfDay.substring(timeOfDay.indexOf('-')+1));
+
 	   					 scanner.close();
-	   					 
-	   					 return c1; 
+	   					 return tempC; 
 	   					 }
 
 						
@@ -115,7 +113,7 @@ public class Course {
 				e.printStackTrace();
 			}
 	   		 
-	   	return c1;
+	   	return tempC;
 	 }
 
 	public String getDept() {
